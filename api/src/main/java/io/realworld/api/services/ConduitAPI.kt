@@ -15,6 +15,9 @@ interface ConduitAPI {
 
     @GET("articles")
     suspend fun getArticles(
+        @Query("author") author: String? = null,
+        @Query("favourited") favourited: String? = null,
+        @Query("tag") tag: String? = null
     ): Response<ArticlesResponse>
 
 }
